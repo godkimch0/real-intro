@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>상호작용 자기소개</title>
+<style>
+    /* body는 화면 전체 사용, 기본 여백 제거 */
+    body {
+        font-family: '맑은 고딕', Arial, sans-serif;
+        margin: 0;
+        padding: 50px 20px;
+        background: #e0f7fa; /* 연한 시안색 배경 */
+        color: #333;
+        line-height: 1.6;
+        box-sizing: border-box;
+        min-height: 100vh;
+    }
+
+    /* 화면 중앙에 고정 너비 컨테이너 */
+    .container {
+        max-width: 900px;
+        margin: 0 auto; /* 좌우 중앙 정렬 */
+        display: flex;
+        gap: 30px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    /* 왼쪽 사진 영역 */
+    .left-photo {
+        flex: 0 0 250px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .left-photo img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* 오른쪽 내용 영역 */
+    .right-content {
+        flex: 1;
+    }
+    h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 40px;
+    }
+    .section {
+        margin-bottom: 25px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .section-header {
+        cursor: pointer;
+        padding: 15px 20px;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #34495e;
+        user-select: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .section-header:hover {
+        background-color: #e0e7ef;
+    }
+    .section-content {
+        padding: 0 20px 20px 20px;
+        display: none;
+        font-size: 1.1rem;
+        white-space: pre-line;
+        color: #555;
+    }
+    .section-header .arrow {
+        transition: transform 0.3s ease;
+    }
+    .section-header.active .arrow {
+        transform: rotate(90deg);
+    }
+    .section-content img {
+        max-width: 100%;
+        margin-top: 10px;
+        border-radius: 6px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-photo">
+            <img src="학생 증명사진.jpg" alt="내 얼굴 사진" />
+        </div>
+        <div class="right-content">
+            <h1>안녕하세요, 저는 김지환입니다.</h1>
+
+            <div class="section">
+                <div class="section-header">
+                    소개
+                    <span class="arrow">▶</span>
+                </div>
+                <div class="section-content">
+                    제 MBTI는 ESFP로 완전 활동적인 멋쟁이입니다.
+                    매사에 열정적이고 끈기 있는 멋진 사나이!!!!!!!!!!!!!!!!!
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    취미
+                    <span class="arrow">▶</span>
+                </div>
+                <div class="section-content">
+                    취미는 게임을 좋아하고 늦잠을 잘잡니다. 친추 ㄱ
+                    <br />
+                    <img src="KakaoTalk_20250417_202928838.png" alt="취미 사진" />
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    연락처
+                    <span class="arrow">▶</span>
+                </div>
+                <div class="section-content">
+                    이메일: kimdufy03@gmail.com<br />
+                    전화번호: 010-5948-7995<br />
+                    인스타그램: <a href="https://www.instagram.com/kim.ch_hxxn/?__pwa=1#" target="_blank" rel="noopener noreferrer">kim.ch_hxxn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    const headers = document.querySelectorAll('.section-header');
+    headers.forEach(header => {
+        header.addEventListener('click', () => {
+            const content = header.nextElementSibling;
+            const isVisible = content.style.display === 'block';
+
+            if (isVisible) {
+                content.style.display = 'none';
+                header.classList.remove('active');
+            } else {
+                content.style.display = 'block';
+                header.classList.add('active');
+            }
+        });
+    });
+</script>
+</body>
+</html>
